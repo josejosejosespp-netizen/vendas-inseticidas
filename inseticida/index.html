@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Digital | Inseticidas Pro</title>
+    <style>
+        :root {
+            --primary-color: #2e7d32; /* Verde Inseticida/Agrícola */
+            --accent-color: #fbc02d;  /* Amarelo de atenção/detalhe */
+            --text-dark: #333;
+            --bg-light: #f4f4f9;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .icon {
+            font-size: 50px;
+            margin-bottom: 1rem;
+        }
+
+        h1 { margin: 0; font-size: 1.8rem; }
+        p { line-height: 1.6; color: #666; }
+
+        .btn-download {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 18px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            margin-top: 1.5rem;
+            transition: transform 0.2s, background 0.3s;
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+        }
+
+        .btn-download:hover {
+            background-color: #1b5e20;
+            transform: scale(1.05);
+        }
+
+        .info-box {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #fff9c4;
+            border-left: 5px solid var(--accent-color);
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: #999;
+            padding-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>BioControl Inseticidas</h1>
+        <p>Soluções Eficazes para o seu Cultivo</p>
+    </header>
+
+    <div class="container">
+        <div class="icon">📱</div>
+        <h2>Baixe nosso Catálogo Digital</h2>
+        <p>Tenha acesso offline a todos os nossos produtos, fichas técnicas e manuais de aplicação diretamente no seu Android.</p>
+
+        <!-- O segredo está aqui: o link para o seu arquivo APK -->
+        <a href="catalogo-inseticidas.apk" class="btn-download" download>
+            BAIXAR APLICATIVO (.APK)
+        </a>
+
+        <div class="info-box">
+            <strong>Como instalar:</strong><br>
+            1. Clique no botão acima para baixar.<br>
+            2. Se o seu celular bloquear, vá em <em>Configurações</em> e autorize <em>"Instalar de fontes desconhecidas"</em>.<br>
+            3. Abra o arquivo e finalize a instalação.
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 BioControl Inseticidas - Todos os direitos reservados.
+    </footer>
+
+</body>
+</html>
