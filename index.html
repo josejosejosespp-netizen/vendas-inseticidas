@@ -1,250 +1,175 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Sampa Repasse | Aplicativo Oficial</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <title>Auto Sampa - O seu próximo carro está aqui</title>
     <style>
-        /* Reset e Configurações Básicas */
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Inter', sans-serif;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
         body {
-            /* Fundo com imagem de carros e uma camada escura (overlay) para dar contraste */
-            background: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.85)), 
-                        url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 20px 50px;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-            color: #1f2937;
         }
-
-        /* Container Principal (Efeito Premium) */
-        .container {
-            width: 100%;
-            max-width: 550px;
-            background: rgba(255, 255, 255, 0.96); /* Fundo branco levemente transparente */
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            border-top: 6px solid #D31225;
-            backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
+        header h1 {
+            color: #e63946;
         }
-
-        /* Cabeçalho do Formulário */
-        .header {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .header h2 {
-            color: #111827;
-            font-size: 28px;
-            font-weight: 800;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: -0.5px;
+        nav ul {
+            list-style: none;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
+            gap: 20px;
         }
-
-        .header h2 span {
-            color: #D31225;
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
         }
-
-        .header p {
-            color: #4b5563;
-            font-size: 15px;
-            line-height: 1.5;
-            font-weight: 500;
-        }
-
-        /* Alerta de Bônus / Desconto */
-        .bonus-badge {
-            background: #fffbeb;
-            color: #b45309;
-            border: 1px solid #fde68a;
-            padding: 15px;
-            text-align: center;
-            font-weight: 800;
-            font-size: 16px;
-            border-radius: 8px;
-            margin-bottom: 25px;
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1920&q=80') center/cover;
+            height: 60vh;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-
-        .bonus-badge span {
-            font-size: 13px;
-            font-weight: 500;
-            color: #92400e;
-        }
-
-        /* Botão de Download com Animação */
-        .download-btn {
-            width: 100%;
-            background-color: #D31225;
-            color: #ffffff;
-            padding: 18px;
-            font-size: 20px;
-            font-weight: 800;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-bottom: 15px;
-            display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            text-transform: uppercase;
-            box-shadow: 0 4px 15px rgba(211, 18, 37, 0.3);
-            animation: pulse 2s infinite;
-        }
-
-        .download-btn:hover {
-            background-color: #b90f1f;
-            box-shadow: 0 6px 20px rgba(211, 18, 37, 0.4);
-            transform: translateY(-2px);
-            animation: none;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(211, 18, 37, 0.6); }
-            70% { box-shadow: 0 0 0 15px rgba(211, 18, 37, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(211, 18, 37, 0); }
-        }
-
-        /* Selos de Segurança (Credibilidade) */
-        .trust-badges {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-        }
-
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 12px;
-            color: #047857; /* Verde escuro para passar confiança */
-            font-weight: 600;
-            background: #ecfdf5;
-            padding: 6px 12px;
-            border-radius: 20px;
-            border: 1px solid #a7f3d0;
-        }
-
-        /* Caixa de Instruções de Instalação */
-        .instructions-box {
-            background-color: #f8fafc;
-            border-left: 4px solid #3b82f6;
-            padding: 16px;
-            border-radius: 0 8px 8px 0;
-            margin-top: 10px;
-            border: 1px solid #e2e8f0;
-            border-left-width: 4px;
-        }
-
-        .instructions-box h3 {
-            font-size: 14px;
-            color: #1e293b;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .instructions-box ol {
-            padding-left: 20px;
-            font-size: 13.5px;
-            color: #475569;
-            line-height: 1.6;
-        }
-
-        .instructions-box ol li strong {
-            color: #0f172a;
-        }
-
-        /* Rodapé */
-        .footer-text {
+            color: white;
             text-align: center;
-            margin-top: 25px;
-            font-size: 12px;
-            color: #6b7280;
-            border-top: 1px solid #e5e7eb;
-            padding-top: 15px;
+        }
+        .search-bar {
+            margin-top: 20px;
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            gap: 10px;
+        }
+        .search-bar input, .search-bar select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .search-bar button {
+            background-color: #e63946;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .container {
+            padding: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .car-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .car-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .car-card:hover {
+            transform: translateY(-5px);
+        }
+        .car-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .car-info {
+            padding: 20px;
+        }
+        .car-price {
+            color: #e63946;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
         }
     </style>
 </head>
 <body>
 
+    <header>
+        <h1>Auto Sampa</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Comprar</a></li>
+                <li><a href="#">Vender</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Encontre o carro dos seus sonhos</h2>
+        <p>As melhores ofertas de São Paulo estão aqui.</p>
+        <div class="search-bar">
+            <input type="text" placeholder="Marca ou Modelo">
+            <select>
+                <option value="">Ano Mínimo</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+            </select>
+            <button>Buscar Veículos</button>
+        </div>
+    </section>
+
     <div class="container">
-        <!-- Cabeçalho -->
-        <div class="header">
-            <!-- Adicionado ícone de verificado para autoridade -->
-            <h2>Auto Sampa <span>Repasse</span> ☑️</h2>
-            <p>Baixe agora nosso catálogo exclusivo e tenha os melhores repasses na palma da sua mão.</p>
-        </div>
-
-        <!-- Alerta/Bônus -->
-        <div class="bonus-badge">
-            💰 DESCONTO DE ATÉ R$ 1.000 POR CARRO!
-            <span>Benefício exclusivo para compras feitas pelo nosso aplicativo.</span>
-        </div>
-
-        <!-- BOTÃO DE DOWNLOAD -->
-        <a href="COLOQUE_AQUI_O_LINK_DO_SEU_APP.apk" download="AutoSampaRepasse.apk" class="download-btn">
-            📥 BAIXAR APLICATIVO
-        </a>
-
-        <!-- Selos de Segurança -->
-        <div class="trust-badges">
-            <div class="trust-item">
-                🔒 Site Seguro
+        <h2>Veículos em Destaque</h2>
+        <div class="car-grid">
+            <!-- Carro 1 -->
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80" alt="Carro">
+                <div class="car-info">
+                    <h3>Volkswagen Golf GTI</h3>
+                    <p>2021 • 35.000 km • Automático</p>
+                    <div class="car-price">R$ 215.000</div>
+                    <button style="width:100%; padding:10px; background:#1a1a1a; color:#fff; border:none; cursor:pointer;">Ver Detalhes</button>
+                </div>
             </div>
-            <div class="trust-item">
-                🛡️ Livre de Vírus
+            <!-- Carro 2 -->
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80" alt="Carro">
+                <div class="car-info">
+                    <h3>BMW Série 3 320i</h3>
+                    <p>2022 • 15.000 km • Automático</p>
+                    <div class="car-price">R$ 290.000</div>
+                    <button style="width:100%; padding:10px; background:#1a1a1a; color:#fff; border:none; cursor:pointer;">Ver Detalhes</button>
+                </div>
             </div>
-            <div class="trust-item">
-                ⭐ App Oficial
-            </div>
-        </div>
-
-        <!-- Instruções de Permissão Restrita -->
-        <div class="instructions-box">
-            <h3>⚠️ Atenção na hora de instalar:</h3>
-            <ol>
-                <li>Após concluir o download, toque no arquivo para abrir.</li>
-                <li>Caso apareça a mensagem de <strong>"Permissão Restrita"</strong>, clique em <strong>Configurações</strong>.</li>
-                <li>Procure pela opção <strong>"Apps"</strong> ou <strong>"Permitir desta fonte"</strong>.</li>
-                <li>Autorize a instalação, abra o app e aproveite seus descontos!</li>
-            </ol>
-        </div>
-
-        <div class="footer-text">
-            <p><strong>Auto Sampa Repasse</strong> © 2024 - Todos os direitos reservados.</p>
-            <p>Conexão criptografada de ponta a ponta.</p>
         </div>
     </div>
+
+    <footer>
+        <p>&copy; 2026 Auto Sampa. Todos os direitos reservados.</p>
+    </footer>
 
 </body>
 </html>
