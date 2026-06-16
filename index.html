@@ -11,7 +11,7 @@
             padding: 40px 0;
             font-family: 'Segoe UI', Arial, sans-serif;
             background-color: #f7f5f2;
-            /* Padrão geométrico de linhas idêntico ao de Gemini_Generated_Image_ss1ozess1ozess1o.png */
+            /* Padrão geométrico de linhas idêntico ao modelo */
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='104' viewBox='0 0 60 104'%3E%3Cg fill='%23d1c9be' fill-opacity='0.22'%3E%3Cpath d='M0 0h60v2H0V0zm0 52h60v2H0v-2zm0 50h60v2H0v-2zm30-50L0 0h4l26 45L56 0h4L30 52zm0 0L0 104h4l26-45 26 45h4L30 52zm0-52v104M0 0v104m60-104v104'/%3E%3C/g%3E%3C/svg%3E");
             background-position: center;
             background-repeat: repeat;
@@ -66,7 +66,7 @@
             letter-spacing: 0.2px;
         }
 
-        /* Bloco da Imagem com Moldura Fina e Dourada */
+        /* Bloco da Imagem Redonda */
         .image-container {
             position: relative;
             margin: 25px auto 35px auto;
@@ -82,14 +82,17 @@
             border: 4px solid #ccaf86;
             box-shadow: 0 6px 18px rgba(204, 175, 134, 0.2);
             background-color: #fcfbfa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        /* Recorte focado no rosto da vanessa.jpeg */
+        /* CORREÇÃO AQUI: Garante que a foto se ajuste ao círculo sem sumir com o rosto */
         .profile-frame img {
-            width: 190%;
-            height: 190%;
-            object-fit: cover;
-            object-position: 63% 36%; 
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Faz a foto preencher o espaço mantendo a proporção */
+            object-position: center top; /* Garante o foco no topo/rosto da imagem */
             display: block;
         }
 
@@ -210,7 +213,7 @@
         <!-- Foto de Perfil Central -->
         <div class="image-container">
             <div class="profile-frame">
-                <!-- Mantendo a busca pelo seu arquivo local -->
+                <!-- Certifique-se de que a foto está com o nome correto: vanessa.jpeg -->
                 <img src="vanessa.jpeg" alt="Profª Vanessa de Andrade">
             </div>
             <div class="name-tag">Profª Vanessa de Andrade</div>
