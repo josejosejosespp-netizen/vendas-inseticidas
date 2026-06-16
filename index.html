@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Sampa Repasse | Baixe Nosso App</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Auto Sampa Repasse | Aplicativo Oficial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         /* Reset e Configurações Básicas */
@@ -16,7 +16,9 @@
         }
 
         body {
-            background-color: #f3f4f6;
+            /* Fundo com imagem de carros e uma camada escura (overlay) para dar contraste */
+            background: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.85)), 
+                        url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -25,15 +27,16 @@
             color: #1f2937;
         }
 
-        /* Container Principal */
+        /* Container Principal (Efeito Premium) */
         .container {
             width: 100%;
             max-width: 550px;
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.96); /* Fundo branco levemente transparente */
             padding: 40px;
             border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            border-top: 6px solid #D31225; /* Vermelho Automotivo */
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-top: 6px solid #D31225;
+            backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
         }
 
         /* Cabeçalho do Formulário */
@@ -44,11 +47,15 @@
 
         .header h2 {
             color: #111827;
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 800;
             margin-bottom: 8px;
             text-transform: uppercase;
             letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
 
         .header h2 span {
@@ -59,6 +66,7 @@
             color: #4b5563;
             font-size: 15px;
             line-height: 1.5;
+            font-weight: 500;
         }
 
         /* Alerta de Bônus / Desconto */
@@ -68,8 +76,8 @@
             border: 1px solid #fde68a;
             padding: 15px;
             text-align: center;
-            font-weight: 700;
-            font-size: 15px;
+            font-weight: 800;
+            font-size: 16px;
             border-radius: 8px;
             margin-bottom: 25px;
             display: flex;
@@ -77,11 +85,13 @@
             align-items: center;
             justify-content: center;
             gap: 5px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
         .bonus-badge span {
             font-size: 13px;
             font-weight: 500;
+            color: #92400e;
         }
 
         /* Botão de Download com Animação */
@@ -96,7 +106,7 @@
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -114,30 +124,44 @@
             animation: none;
         }
 
-        .download-btn:active {
-            transform: scale(0.98);
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(211, 18, 37, 0.6); }
+            70% { box-shadow: 0 0 0 15px rgba(211, 18, 37, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(211, 18, 37, 0); }
         }
 
-        /* Animação para chamar atenção pro botão */
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(211, 18, 37, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 15px rgba(211, 18, 37, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(211, 18, 37, 0);
-            }
+        /* Selos de Segurança (Credibilidade) */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 12px;
+            color: #047857; /* Verde escuro para passar confiança */
+            font-weight: 600;
+            background: #ecfdf5;
+            padding: 6px 12px;
+            border-radius: 20px;
+            border: 1px solid #a7f3d0;
         }
 
         /* Caixa de Instruções de Instalação */
         .instructions-box {
             background-color: #f8fafc;
-            border-left: 4px solid #3b82f6; /* Azul informativo */
+            border-left: 4px solid #3b82f6;
             padding: 16px;
             border-radius: 0 8px 8px 0;
             margin-top: 10px;
+            border: 1px solid #e2e8f0;
+            border-left-width: 4px;
         }
 
         .instructions-box h3 {
@@ -165,7 +189,9 @@
             text-align: center;
             margin-top: 25px;
             font-size: 12px;
-            color: #9ca3af;
+            color: #6b7280;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 15px;
         }
     </style>
 </head>
@@ -174,21 +200,34 @@
     <div class="container">
         <!-- Cabeçalho -->
         <div class="header">
-            <h2>Auto Sampa <span>Repasse</span></h2>
+            <!-- Adicionado ícone de verificado para autoridade -->
+            <h2>Auto Sampa <span>Repasse</span> ☑️</h2>
             <p>Baixe agora nosso catálogo exclusivo e tenha os melhores repasses na palma da sua mão.</p>
         </div>
 
         <!-- Alerta/Bônus -->
         <div class="bonus-badge">
             💰 DESCONTO DE ATÉ R$ 1.000 POR CARRO!
-            <span>Exclusivo para compras feitas pelo nosso aplicativo.</span>
+            <span>Benefício exclusivo para compras feitas pelo nosso aplicativo.</span>
         </div>
 
         <!-- BOTÃO DE DOWNLOAD -->
-        <!-- O atributo "download" força o dispositivo a baixar o arquivo em vez de tentar abri-lo no navegador -->
         <a href="COLOQUE_AQUI_O_LINK_DO_SEU_APP.apk" download="AutoSampaRepasse.apk" class="download-btn">
             📥 BAIXAR APLICATIVO
         </a>
+
+        <!-- Selos de Segurança -->
+        <div class="trust-badges">
+            <div class="trust-item">
+                🔒 Site Seguro
+            </div>
+            <div class="trust-item">
+                🛡️ Livre de Vírus
+            </div>
+            <div class="trust-item">
+                ⭐ App Oficial
+            </div>
+        </div>
 
         <!-- Instruções de Permissão Restrita -->
         <div class="instructions-box">
@@ -201,7 +240,10 @@
             </ol>
         </div>
 
-        <p class="footer-text">Aplicativo 100% seguro e livre de vírus.</p>
+        <div class="footer-text">
+            <p><strong>Auto Sampa Repasse</strong> © 2024 - Todos os direitos reservados.</p>
+            <p>Conexão criptografada de ponta a ponta.</p>
+        </div>
     </div>
 
 </body>
