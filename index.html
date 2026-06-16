@@ -11,7 +11,6 @@
             padding: 40px 0;
             font-family: 'Segoe UI', Arial, sans-serif;
             background-color: #f7f5f2;
-            /* Fundo geométrico embutido */
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='104' viewBox='0 0 60 104'%3E%3Cg fill='%23d1c9be' fill-opacity='0.22'%3E%3Cpath d='M0 0h60v2H0V0zm0 52h60v2H0v-2zm0 50h60v2H0v-2zm30-50L0 0h4l26 45L56 0h4L30 52zm0 0L0 104h4l26-45 26 45h4L30 52zm0-52v104M0 0v104m60-104v104'/%3E%3C/g%3E%3C/svg%3E");
             background-position: center;
             background-repeat: repeat;
@@ -38,7 +37,7 @@
         /* Cabeçalho com o Gradiente Suave */
         .card-header {
             background: linear-gradient(180deg, #e7d3c5 0%, #eddacf 50%, #ffffff 100%);
-            padding: 40px 20px 10px 20px;
+            padding: 40px 20px 30px 20px;
         }
 
         /* Título Vanessa Pilates */
@@ -66,72 +65,35 @@
             letter-spacing: 0.2px;
         }
 
-        /* Bloco da Imagem Redonda */
-        .image-container {
-            position: relative;
-            margin: 25px auto 35px auto;
-            width: 185px;
-            height: 185px;
-        }
-
-        .profile-frame {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 4px solid #ccaf86;
-            box-shadow: 0 6px 18px rgba(204, 175, 134, 0.2);
-            background-color: #fcfbfa;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Exibição perfeita e centralizada da foto embutida */
-        .profile-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center top;
-            display: block;
-        }
-
-        /* Faixa Dourada com o Nome */
-        .name-tag {
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(180deg, #d3bba2 0%, #bca38a 100%);
-            color: #1a1a1a;
-            padding: 5px 22px;
-            border-radius: 6px;
-            font-size: 13.5px;
-            font-weight: 700;
-            white-space: nowrap;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-            border: 1px solid #c5ae96;
-            z-index: 2;
-        }
-
         /* Corpo do Texto */
         .card-body {
-            padding: 0 35px 20px 35px;
+            padding: 30px 35px 35px 35px;
+        }
+
+        /* DESTAQUE PRINCIPAL: Frase bem grande e chamativa */
+        .headline-sorteada {
+            color: #9b445d; /* Cor Marsala para combinar com o botão */
+            font-size: 36px;
+            line-height: 1.2;
+            font-weight: 800;
+            margin: 0 0 20px 0;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
         }
 
         .announcement {
             color: #444444;
-            font-size: 17.5px;
+            font-size: 18px;
             line-height: 1.6;
-            margin: 0 0 30px 0;
-            font-weight: 300;
+            margin: 0 0 35px 0;
+            font-weight: 400;
         }
 
         .announcement strong {
             color: #000000;
             display: block;
-            font-size: 20px;
-            margin-top: 6px;
+            font-size: 22px;
+            margin-top: 10px;
             font-weight: 700;
         }
 
@@ -144,14 +106,13 @@
             align-items: center;
             justify-content: center;
             gap: 12px;
-            padding: 16px 42px;
-            font-size: 18px;
+            padding: 18px 45px;
+            font-size: 19px;
             font-weight: 600;
             border-radius: 50px;
             box-shadow: 0 8px 22px rgba(155, 68, 93, 0.3);
             transition: all 0.25s ease;
             border: 1px solid #752d41;
-            margin-bottom: 20px;
         }
 
         .btn-download:hover {
@@ -169,7 +130,8 @@
         /* Rodapé em Degradê */
         .card-footer {
             background: linear-gradient(180deg, #ffffff 0%, #eddacf 100%);
-            padding: 22px 20px;
+            padding: 25px 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.02);
         }
 
         .social-links {
@@ -211,18 +173,13 @@
             <p class="brand-subtitle">Comemore Conosco - 6 Anos!</p>
         </div>
 
-        <!-- Foto de Perfil Central (Agora 100% blindada e embutida em código) -->
-        <div class="image-container">
-            <div class="profile-frame">
-                <img src="data:image/png;base64,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" alt="Profª Vanessa de Andrade">
-            </div>
-            <div class="name-tag">Profª Vanessa de Andrade</div>
-        </div>
-
         <!-- Conteúdo do Sorteio -->
         <div class="card-body">
+            <!-- Frase em tamanho grande solicitada -->
+            <h2 class="headline-sorteada">Você foi sorteada!</h2>
+            
             <p class="announcement">
-                PARABÉNS! Você foi sorteada para receber o aplicativo de E-book totalmente gratuito:
+                PARABÉNS! Você ganhou o direito de receber o aplicativo de E-book totalmente gratuito:
                 <strong>Vanessa Pilates - Guia Prático</strong>
             </p>
             
