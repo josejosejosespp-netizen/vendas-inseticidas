@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Sampa Repasse | Cadastro de Parceiros</title>
+    <title>Auto Sampa Repasse | Baixe Nosso App</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
@@ -39,7 +39,7 @@
         /* Cabeçalho do Formulário */
         .header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .header h2 {
@@ -56,90 +56,114 @@
         }
 
         .header p {
-            color: #6b7280;
+            color: #4b5563;
             font-size: 15px;
+            line-height: 1.5;
         }
 
-        /* Alerta de Bônus */
+        /* Alerta de Bônus / Desconto */
         .bonus-badge {
             background: #fffbeb;
             color: #b45309;
             border: 1px solid #fde68a;
-            padding: 12px;
+            padding: 15px;
             text-align: center;
-            font-weight: 600;
-            font-size: 14px;
+            font-weight: 700;
+            font-size: 15px;
             border-radius: 8px;
             margin-bottom: 25px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 5px;
         }
 
-        /* Elementos de Formulário */
-        .form-group {
-            margin-bottom: 20px;
+        .bonus-badge span {
+            font-size: 13px;
+            font-weight: 500;
         }
 
-        label {
-            display: block;
-            font-size: 14px;
-            font-weight: 600;
-            color: #374151;
-            margin-bottom: 8px;
-        }
-
-        /* CSS que estava cortado agora finalizado */
-        input, select {
-            width: 100%;
-            padding: 12px 16px;
-            font-size: 15px;
-            border: 1px solid #d1d5db;
-            border-radius: 8px;
-            background-color: #f9fafb;
-            color: #111827;
-            outline: none;
-            transition: all 0.3s ease;
-        }
-
-        input:focus, select:focus {
-            border-color: #D31225;
-            background-color: #ffffff;
-            box-shadow: 0 0 0 4px rgba(211, 18, 37, 0.1);
-        }
-
-        input::placeholder {
-            color: #9ca3af;
-        }
-
-        /* Botão de Envio */
-        .submit-btn {
+        /* Botão de Download com Animação */
+        .download-btn {
             width: 100%;
             background-color: #D31225;
             color: #ffffff;
-            padding: 14px;
-            font-size: 16px;
-            font-weight: 700;
+            padding: 18px;
+            font-size: 20px;
+            font-weight: 800;
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.1s ease;
-            margin-top: 10px;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(211, 18, 37, 0.3);
+            animation: pulse 2s infinite;
         }
 
-        .submit-btn:hover {
+        .download-btn:hover {
             background-color: #b90f1f;
+            box-shadow: 0 6px 20px rgba(211, 18, 37, 0.4);
+            transform: translateY(-2px);
+            animation: none;
         }
 
-        .submit-btn:active {
+        .download-btn:active {
             transform: scale(0.98);
         }
 
-        /* Rodapé do Formulário */
+        /* Animação para chamar atenção pro botão */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(211, 18, 37, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(211, 18, 37, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(211, 18, 37, 0);
+            }
+        }
+
+        /* Caixa de Instruções de Instalação */
+        .instructions-box {
+            background-color: #f8fafc;
+            border-left: 4px solid #3b82f6; /* Azul informativo */
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 10px;
+        }
+
+        .instructions-box h3 {
+            font-size: 14px;
+            color: #1e293b;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .instructions-box ol {
+            padding-left: 20px;
+            font-size: 13.5px;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        .instructions-box ol li strong {
+            color: #0f172a;
+        }
+
+        /* Rodapé */
         .footer-text {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 25px;
             font-size: 12px;
             color: #9ca3af;
         }
@@ -151,47 +175,33 @@
         <!-- Cabeçalho -->
         <div class="header">
             <h2>Auto Sampa <span>Repasse</span></h2>
-            <p>Faça seu cadastro e acesse nosso estoque exclusivo com preços de repasse.</p>
+            <p>Baixe agora nosso catálogo exclusivo e tenha os melhores repasses na palma da sua mão.</p>
         </div>
 
         <!-- Alerta/Bônus -->
         <div class="bonus-badge">
-            🚗 Oportunidades diárias exclusivas para parceiros cadastrados!
+            💰 DESCONTO DE ATÉ R$ 1.000 POR CARRO!
+            <span>Exclusivo para compras feitas pelo nosso aplicativo.</span>
         </div>
 
-        <!-- Formulário -->
-        <form action="#" method="POST">
-            
-            <div class="form-group">
-                <label for="nome">Nome Completo / Razão Social</label>
-                <input type="text" id="nome" name="nome" placeholder="Digite seu nome ou o da loja" required>
-            </div>
+        <!-- BOTÃO DE DOWNLOAD -->
+        <!-- O atributo "download" força o dispositivo a baixar o arquivo em vez de tentar abri-lo no navegador -->
+        <a href="COLOQUE_AQUI_O_LINK_DO_SEU_APP.apk" download="AutoSampaRepasse.apk" class="download-btn">
+            📥 BAIXAR APLICATIVO
+        </a>
 
-            <div class="form-group">
-                <label for="whatsapp">WhatsApp</label>
-                <input type="tel" id="whatsapp" name="whatsapp" placeholder="(11) 99999-9999" required>
-            </div>
+        <!-- Instruções de Permissão Restrita -->
+        <div class="instructions-box">
+            <h3>⚠️ Atenção na hora de instalar:</h3>
+            <ol>
+                <li>Após concluir o download, toque no arquivo para abrir.</li>
+                <li>Caso apareça a mensagem de <strong>"Permissão Restrita"</strong>, clique em <strong>Configurações</strong>.</li>
+                <li>Procure pela opção <strong>"Apps"</strong> ou <strong>"Permitir desta fonte"</strong>.</li>
+                <li>Autorize a instalação, abra o app e aproveite seus descontos!</li>
+            </ol>
+        </div>
 
-            <div class="form-group">
-                <label for="tipo">Qual o seu perfil?</label>
-                <select id="tipo" name="tipo" required>
-                    <option value="" disabled selected>Selecione uma opção...</option>
-                    <option value="lojista">Lojista (Agência/Concessionária)</option>
-                    <option value="repassador">Repassador Independente</option>
-                    <option value="particular">Comprador Particular</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="documento">CNPJ ou CPF</label>
-                <input type="text" id="documento" name="documento" placeholder="00.000.000/0000-00" required>
-            </div>
-
-            <button type="submit" class="submit-btn">Acessar Estoque Agora</button>
-
-        </form>
-
-        <p class="footer-text">Seus dados estão seguros. Não enviamos spam.</p>
+        <p class="footer-text">Aplicativo 100% seguro e livre de vírus.</p>
     </div>
 
 </body>
