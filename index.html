@@ -5,22 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vanessa Pilates - E-book Gratuito</title>
     <style>
-        /* Estilos Gerais e Fundo Texturizado */
+        /* Estilos Gerais e Fundo Geométrico Idêntico ao Modelo */
         body {
             margin: 0;
             padding: 40px 0;
             font-family: 'Segoe UI', Arial, sans-serif;
             background-color: #f7f5f2;
-            /* Recria o padrão geométrico sutil de fundo do modelo */
-            background-image: 
-                linear-gradient(30deg, #eae6e1 12%, transparent 12.5%, transparent 87%, #eae6e1 87.5%, #eae6e1),
-                linear-gradient(150deg, #eae6e1 12%, transparent 12.5%, transparent 87%, #eae6e1 87.5%, #eae6e1),
-                linear-gradient(30deg, #eae6e1 12%, transparent 12.5%, transparent 87%, #eae6e1 87.5%, #eae6e1),
-                linear-gradient(150deg, #eae6e1 12%, transparent 12.5%, transparent 87%, #eae6e1 87.5%, #eae6e1),
-                linear-gradient(60deg, #f2eee9 25%, transparent 25.5%, transparent 75%, #f2eee9 75.5%, #f2eee9),
-                linear-gradient(60deg, #f2eee9 25%, transparent 25.5%, transparent 75%, #f2eee9 75.5%, #f2eee9);
-            background-size: 40px 70px;
-            background-position: 0 0, 0 0, 20px 35px, 20px 35px, 0 0, 20px 35px;
+            /* Padrão geométrico de linhas idêntico ao de Gemini_Generated_Image_ss1ozess1ozess1o.png */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='104' viewBox='0 0 60 104'%3E%3Cg fill='%23d1c9be' fill-opacity='0.22'%3E%3Cpath d='M0 0h60v2H0V0zm0 52h60v2H0v-2zm0 50h60v2H0v-2zm30-50L0 0h4l26 45L56 0h4L30 52zm0 0L0 104h4l26-45 26 45h4L30 52zm0-52v104M0 0v104m60-104v104'/%3E%3C/g%3E%3C/svg%3E");
+            background-position: center;
+            background-repeat: repeat;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -28,121 +22,116 @@
             box-sizing: border-box;
         }
 
-        /* Container Principal do Site */
+        /* Container Principal (Cartão Branco Clean) */
         .card {
             background-color: #ffffff;
             width: 100%;
             max-width: 500px;
             margin: 0 auto;
             border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
             overflow: hidden;
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.02);
             text-align: center;
         }
 
-        /* Cabeçalho com o Gradiente Rose Gold / Dourado */
+        /* Cabeçalho com o Gradiente Suave */
         .card-header {
-            background: linear-gradient(180deg, #e5cfc1 0%, #ecdccf 45%, #ffffff 100%);
-            padding: 35px 20px 10px 20px;
+            background: linear-gradient(180deg, #e7d3c5 0%, #eddacf 50%, #ffffff 100%);
+            padding: 40px 20px 10px 20px;
         }
 
-        /* Logo Vanessa Pilates */
+        /* Título Vanessa Pilates */
         .brand-title {
-            font-size: 32px;
-            color: #333333;
+            font-size: 34px;
+            color: #2c2c2c;
             margin: 0;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-        }
-        
-        .brand-title strong {
-            font-weight: 700;
+            font-weight: 500;
+            letter-spacing: -0.5px;
         }
 
-        /* Ícone Sutil de Pilates integrado ao texto */
+        /* Ícone de Pilates centralizado */
         .brand-logo-icon {
             display: inline-block;
-            font-size: 24px;
+            font-size: 26px;
             vertical-align: middle;
-            margin: 0 -2px;
+            margin: 0 -4px;
         }
 
         .brand-subtitle {
             font-size: 16px;
             color: #444444;
-            margin: 5px 0 0 0;
+            margin: 6px 0 0 0;
             font-weight: 500;
+            letter-spacing: 0.2px;
         }
 
-        /* Área da Imagem Perfeita */
+        /* Bloco da Imagem com Moldura Fina e Dourada */
         .image-container {
             position: relative;
-            margin: 20px auto 35px auto;
-            width: 180px;
-            height: 180px;
+            margin: 25px auto 35px auto;
+            width: 185px;
+            height: 185px;
         }
 
-        /* Moldura de Foto Idêntica ao Modelo */
         .profile-frame {
             width: 100%;
             height: 100%;
             border-radius: 50%;
             overflow: hidden;
-            border: 4px solid #ccaf86; /* Tom dourado refinado */
-            box-shadow: 0 8px 20px rgba(204, 175, 134, 0.25);
-            background-color: #f7f5f2;
+            border: 4px solid #ccaf86;
+            box-shadow: 0 6px 18px rgba(204, 175, 134, 0.2);
+            background-color: #fcfbfa;
         }
 
-        /* Puxa a imagem original cortando exatamente no rosto */
+        /* Recorte focado no rosto da vanessa.jpeg */
         .profile-frame img {
             width: 190%;
             height: 190%;
             object-fit: cover;
-            /* Faz o zoom milimétrico na face da Vanessa de Andrade */
             object-position: 63% 36%; 
             display: block;
         }
 
-        /* Tag com o Nome sobreposta abaixo da foto */
+        /* Faixa Dourada com o Nome */
         .name-tag {
             position: absolute;
-            bottom: -12px;
+            bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
             background: linear-gradient(180deg, #d3bba2 0%, #bca38a 100%);
-            color: #111111;
-            padding: 6px 18px;
-            border-radius: 8px;
-            font-size: 13px;
+            color: #1a1a1a;
+            padding: 5px 22px;
+            border-radius: 6px;
+            font-size: 13.5px;
             font-weight: 700;
             white-space: nowrap;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
             border: 1px solid #c5ae96;
         }
 
-        /* Corpo de Texto */
+        /* Corpo do Texto */
         .card-body {
-            padding: 0 35px 25px 35px;
+            padding: 0 35px 20px 35px;
         }
 
         .announcement {
-            color: #555555;
-            font-size: 17px;
+            color: #444444;
+            font-size: 17.5px;
             line-height: 1.6;
-            margin: 0 0 25px 0;
-            font-weight: 400;
+            margin: 0 0 30px 0;
+            font-weight: 300;
         }
 
         .announcement strong {
             color: #000000;
             display: block;
-            font-size: 19px;
-            margin-top: 8px;
+            font-size: 20px;
+            margin-top: 6px;
             font-weight: 700;
         }
 
-        /* Botão Arredondado em Tom Vinho/Marsala Premium */
+        /* Botão Arredondado Marsala */
         .btn-download {
             background: linear-gradient(180deg, #9b445d 0%, #803348 100%);
             color: #ffffff;
@@ -151,37 +140,34 @@
             align-items: center;
             justify-content: center;
             gap: 12px;
-            padding: 16px 40px;
+            padding: 16px 42px;
             font-size: 18px;
-            font-weight: 700;
+            font-weight: 600;
             border-radius: 50px;
-            box-shadow: 0 8px 25px rgba(155, 68, 93, 0.35);
-            transition: all 0.3s ease;
+            box-shadow: 0 8px 22px rgba(155, 68, 93, 0.3);
+            transition: all 0.25s ease;
             border: 1px solid #752d41;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .btn-download:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(155, 68, 93, 0.45);
+            box-shadow: 0 10px 25px rgba(155, 68, 93, 0.4);
             background: linear-gradient(180deg, #ad4d6a 0%, #8a374c 100%);
         }
 
-        /* Ícone Nuvem de Download */
         .icon-cloud {
             width: 22px;
             height: 22px;
             fill: currentColor;
         }
 
-        /* Rodapé interno do Card */
+        /* Rodapé em Degradê */
         .card-footer {
-            background: linear-gradient(180deg, #ffffff 0%, #ecdccf 100%);
-            padding: 20px 20px;
-            border-top: 1px solid rgba(0, 0, 0, 0.02);
+            background: linear-gradient(180deg, #ffffff 0%, #eddacf 100%);
+            padding: 22px 20px;
         }
 
-        /* Ícones Sociais (Instagram e Facebook) */
         .social-links {
             margin-bottom: 12px;
         }
@@ -189,13 +175,13 @@
         .social-icon {
             display: inline-block;
             margin: 0 8px;
-            color: #333333;
+            color: #2c2c2c;
             text-decoration: none;
             transition: opacity 0.2s;
         }
 
         .social-icon:hover {
-            opacity: 0.7;
+            opacity: 0.6;
         }
 
         .social-icon svg {
@@ -207,7 +193,7 @@
 
         .copyright {
             font-size: 11px;
-            color: #666666;
+            color: #555555;
             margin: 0;
         }
     </style>
@@ -215,31 +201,30 @@
 <body>
 
     <div class="card">
-        <!-- Topo da página -->
+        <!-- Cabeçalho -->
         <div class="card-header">
             <h1 class="brand-title">Vanessa <span class="brand-logo-icon">🧘‍♀️</span> Pilates</h1>
             <p class="brand-subtitle">Comemore Conosco - 6 Anos!</p>
         </div>
 
-        <!-- Bloco Central da Foto com Tag de Nome -->
+        <!-- Foto de Perfil Central -->
         <div class="image-container">
             <div class="profile-frame">
-                <!-- Certifique-se de que a foto vanessa.jpeg está na mesma pasta -->
+                <!-- Mantendo a busca pelo seu arquivo local -->
                 <img src="vanessa.jpeg" alt="Profª Vanessa de Andrade">
             </div>
             <div class="name-tag">Profª Vanessa de Andrade</div>
         </div>
 
-        <!-- Conteúdo de Texto e Premiação -->
+        <!-- Conteúdo do Sorteio -->
         <div class="card-body">
             <p class="announcement">
                 PARABÉNS! Você foi sorteada para receber o aplicativo de E-book totalmente gratuito:
                 <strong>Vanessa Pilates - Guia Prático</strong>
             </p>
             
-            <!-- Link do Arquivo para Baixar -->
+            <!-- Botão de Download -->
             <a href="#" class="btn-download" download>
-                <!-- Ícone SVG de Nuvem integrado ao botão -->
                 <svg class="icon-cloud" viewBox="0 0 24 24">
                     <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/>
                 </svg>
@@ -247,10 +232,9 @@
             </a>
         </div>
 
-        <!-- Rodapé com Redes Sociais -->
+        <!-- Redes e Copyright -->
         <div class="card-footer">
             <div class="social-links">
-                <!-- Substitua o '#' pelo link correto se desejar -->
                 <a href="#" class="social-icon" title="Instagram">
                     <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
                 </a>
