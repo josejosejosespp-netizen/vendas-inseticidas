@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sicredi - Login</title>
     <style>
-        /* Estilização baseada na identidade visual da Sicredi */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f4f6f5; /* Cinza claro institucional */
+            background-color: #f4f6f5;
             margin: 0;
         }
         .login-container {
@@ -22,15 +21,34 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             width: 320px;
             text-align: center;
-            border-top: 5px solid #008A4B; /* Linha verde Sicredi no topo */
+            border-top: 5px solid #008A4B;
         }
         .logo-container {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
         .logo-container img {
-            width: 160px; /* Tamanho ajustado do logo */
+            width: 160px;
             height: auto;
         }
+        
+        /* Estilização do Alerta de Segurança */
+        .alert-security {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            color: #856404;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            text-align: left;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+        .alert-security strong {
+            display: block;
+            margin-bottom: 3px;
+            color: #664d03;
+        }
+
         .form-group {
             margin-bottom: 20px;
             text-align: left;
@@ -51,58 +69,9 @@
             font-size: 14px;
             transition: border-color 0.3s;
         }
-        /* Efeito de foco verde ao clicar nos campos */
         .form-group input:focus {
             border-color: #008A4B;
             outline: none;
             box-shadow: 0 0 4px rgba(0, 138, 75, 0.2);
         }
-        .btn-submit {
-            width: 100%;
-            padding: 12px;
-            background-color: #008A4B; /* Verde Oficial Sicredi */
-            border: none;
-            border-radius: 6px;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin-top: 10px;
-        }
-        .btn-submit:hover {
-            background-color: #006f3b; /* Verde um pouco mais escuro para o efeito hover */
-        }
-    </style>
-</head>
-<body>
-
-<div class="login-container">
-    
-    <!-- Logo Inicial da Sicredi -->
-    <div class="logo-container">
-        <img src="https://www.sicredi.com.br/media/images/logo-sicredi.png" alt="Logo Sicredi">
-    </div>
-    
-    <form action="/enviar-dados" method="POST">
-        
-        <!-- Campo de Usuário / CPF -->
-        <div class="form-group">
-            <label for="usuario">Usuário ou CPF:</label>
-            <input type="text" id="usuario" name="usuario" placeholder="Digite seu usuário ou CPF" required>
-        </div>
-
-        <!-- Campo de Senha -->
-        <div class="form-group">
-            <label for="senha">Senha de Acesso:</label>
-            <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
-        </div>
-
-        <!-- Botão de Enviar -->
-        <button type="submit" class="btn-submit">Entrar</button>
-        
-    </form>
-</div>
-
-</body>
-</html>
+        .btn-submit
